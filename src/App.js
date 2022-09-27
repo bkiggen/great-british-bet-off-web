@@ -1,8 +1,8 @@
 import "./App.css";
-import { Counter } from "./containers/counter/Counter";
+import { Bakers } from "./containers/Bakers";
 
 function App() {
-  return <Counter />;
+  return <Bakers />;
 }
 
 export default App;
