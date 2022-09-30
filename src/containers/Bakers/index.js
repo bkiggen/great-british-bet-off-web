@@ -1,12 +1,12 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { decrement, incrementByAmount } from "../../redux/counterSlice";
-import { addBook } from "../../redux/booksSlice";
+// import { useSelector, useDispatch } from "react-redux";
+// import { decrement, incrementByAmount } from "../../redux/counterSlice";
+// import { addBook } from "../../redux/booksSlice";
 
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import styled from "@emotion/styled";
 
-import { useGetBakersQuery } from "../../services/pokemon";
+import { useGetBakersQuery } from "../../services/api";
 
 export function Bakers() {
   // const count = useSelector((state) => state.counter.value);
@@ -22,11 +22,22 @@ export function Bakers() {
 
   const Card = styled.div`
     width: 500px;
-    background: #77bdd9;
-    color: white;
+    background: #9ae2ff;
     padding: 30px 20px;
     margin: 12px;
     border-radius: 4px;
+  `;
+
+  const Title = styled.h3`
+    color: white;
+  `;
+
+  const Age = styled.h3`
+    color: white;
+  `;
+
+  const Paragraph = styled.h3`
+    color: white;
   `;
 
   return (
@@ -39,9 +50,9 @@ export function Bakers() {
         data.map((baker) => {
           return (
             <Card variant="outlined">
-              <div>{baker.name}</div>
-              <div>{baker.age}</div>
-              <div>{baker.bio}</div>
+              <Title>{baker.name}</Title>
+              <Age>{baker.age}</Age>
+              <Paragraph>{baker.bio}</Paragraph>
             </Card>
           );
         })

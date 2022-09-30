@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/material/MenuIcon";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
+import styled from "@emotion/styled";
+
+import { GBBIcon } from "components/Icons/GBB";
+
+const StyledLink = styled(Link)`
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  font-family: "Snell Roundhand";
+
+  &:hover {
+    color: yellow;
+  }
+`;
 
 export function Nav() {
   return (
@@ -18,21 +27,17 @@ export function Nav() {
           aria-label="menu"
           sx={{ mr: 2 }}
         >
-          {/* <MenuIcon /> */}GBB
+          <Link to="/">
+            <GBBIcon />
+          </Link>
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/bakers">Bakers</Link>
+        <Typography component="div" sx={{ flexGrow: 1 }}>
+          <StyledLink to="/bakers">Bakers</StyledLink>
         </Typography>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/bakers">Bakers</Link>
+        <Typography component="div" sx={{ flexGrow: 1 }}>
+          <StyledLink to="/rankings">Rankings</StyledLink>
         </Typography>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/bakers">Bakers</Link>
-        </Typography>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/bakers">Bakers</Link>
-        </Typography>
-        <Button color="inherit">Login</Button>
+        <StyledLink to="/login">Login</StyledLink>
       </Toolbar>
     </AppBar>
   );
